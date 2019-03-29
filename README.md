@@ -58,11 +58,11 @@ For steps to reach to this website, [Click this Link](Link.md)
     For weeks you can use `'mod'+"%02d"%(Week Number)` to automatically format the week number.
 
     For downloading a specific format use the corresponding string given below :
-    - MP4 -> **'mp4'**
-    - FLV -> **'flv'**
-    - 3GP -> **'3gp'**
-    - MP3 -> **'mp3'**
-    - PDF -> **'English'**
+    - MP4 -> `'mp4'`
+    - FLV -> `'flv'`
+    - 3GP -> `'3gp'`
+    - MP3 -> `'mp3'`
+    - PDF -> `'English'`
 
     
     _**Note**_
@@ -77,8 +77,9 @@ For steps to reach to this website, [Click this Link](Link.md)
 3. Downloading from the link
 
     After step 2 the download links are stored on to an array. To download them pass each url to `nptel.download(URL,Filename)`
-    ### **Note** 
-    + **PDF** \
+
+    **Note** 
+    + PDF \
     The List of urls of pdf files contain the complete link to the file
     ```python
     >>> Links = Download.getLinks('English')
@@ -97,7 +98,7 @@ For steps to reach to this website, [Click this Link](Link.md)
     ```
     <br>
     
-    + **All other files except PDF** \
+    + All other files except PDF \
     The List of urls of files contain only a partial link to the file
     ```python
    >>> Links = Stream.getLinks('mp4')
