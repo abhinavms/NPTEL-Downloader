@@ -46,16 +46,17 @@ while (ch != 3):
 
             Links = Stream.getLinks(format)
             
-            count = 1
+            count = 0
             if (format == 'English'): 
                 for url in Links:
+                    count = count + 1
                     print('\nDownloading PDF ',count)
                     nptel.download(url , str(count)+'.'+'pdf')
-                    count = count + 1
+                    
             else:
                 for url in Links:
-                    print('\nDownloading ',Links[0].split('=')[3])
-                    nptel.download('https://nptel.ac.in/'+ url , str(count)+"."+Links[0].split('=')[3]+'.'+format)
+                    print('\nDownloading ',Links[count].split('=')[3])
+                    nptel.download('https://nptel.ac.in/'+ url , str(count+1)+"."+Links[0].split('=')[3]+'.'+format)
                     count = count + 1
 
             print ("\nDownload Complete :)\n")
@@ -88,10 +89,10 @@ while (ch != 3):
             
             Links = Stream.getLinks(format,'mod'+"%02d"%(no))
             
-            count = 1
+            count = 0
             for url in Links:
-                print('Downloading ',Links[0].split('=')[3])
-                nptel.download('https://nptel.ac.in/'+ url , str(count)+"."+Links[0].split('=')[3]+'.'+format)
+                print('Downloading ',Links[count].split('=')[3])
+                nptel.download('https://nptel.ac.in/'+ url , str(count+1)+"."+Links[count].split('=')[3]+'.'+format)
                 count = count + 1
 
     elif (ch ==3):
