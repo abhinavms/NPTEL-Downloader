@@ -3,15 +3,19 @@ Python Script to download resources from NPTEL in all formats available
  
 ![alt text](./Screenshot/main.png "")
 
-## Prerequisites Modules
+<br>
+
+## Basic Information
+
+Before we get started, ensure that you have installed Python3 on your machine.
+
+### Modules Required
 1.  Beautiful Soup
 2. Requests
 
-<br>
 
-# Basic Information
+### Formats
 
-## Formats
 _The available formats for downloading are_ 
 + Video
   - MP4
@@ -22,7 +26,7 @@ _The available formats for downloading are_
 + Transcript
   - PDF
 
-## Download Page
+### Download Page
 The resourses are available to download from the link - nptel.ac.in/courses/nptel_download.php?subjectid=[Course ID] \
 Eg - https://nptel.ac.in/courses/nptel_download.php?subjectid=106106198
 
@@ -30,14 +34,13 @@ For steps to reach to this website, [Click this Link](Link.md)
 
 <br>
 
-# Code Instruction
+## Code Instruction
 
-<br>
-
-1. Include main.py in your file
+1. Include `main.py` in your file
     ```python
     from main import nptel as nptel
     ```
+
 <br>
 
 2. Create a object with url of the download page
@@ -47,21 +50,22 @@ For steps to reach to this website, [Click this Link](Link.md)
 
 <br>
 
-3. **ObjectName.getLinks(Format of the content, 'mod'+(Week Number))** returns the download links of all the videos of the specified format and provied week 
+3. `ObjectName.getLinks(Format of the content, 'mod'+(Week Number))` returns the download links of all the videos of the specified format and provied week 
    
    ```python
     Links = Download.getLinks('mp4','mod03')
     ```
-    For weeks you can use **'mod'+"%02d"%(Week Number)** to automatically format the week number.
+    For weeks you can use `'mod'+"%02d"%(Week Number)` to automatically format the week number.
 
     For downloading a specific format use the corresponding string given below :
-    - **MP4 -> 'mp4'**
-    - **FLV -> 'flv'**
-    - **3GP -> '3gp'**
-    - **MP3 -> 'mp3'**
-    - **PDF -> 'English'**
+    - MP4 -> **'mp4'**
+    - FLV -> **'flv'**
+    - 3GP -> **'3gp'**
+    - MP3 -> **'mp3'**
+    - PDF -> **'English'**
 
-    **Note** 
+    
+    _**Note**_
     + If all videos of the format are to be downloaded just pass the format to .getLinks
     ```python
     Links = Download.getLinks('mp4')
@@ -70,9 +74,9 @@ For steps to reach to this website, [Click this Link](Link.md)
 
 <br>
 
-3. Downloading from the link \
-    <br>
-    After step 2 the download links are stored on to an array. To download them pass each url to **nptel.download(URL,Filename)** 
+3. Downloading from the link
+
+    After step 2 the download links are stored on to an array. To download them pass each url to `nptel.download(URL,Filename)`
     ### **Note** 
     + **PDF** \
     The List of urls of pdf files contain the complete link to the file
@@ -93,7 +97,7 @@ For steps to reach to this website, [Click this Link](Link.md)
     ```
     <br>
     
-    + **All other files except pdf** \
+    + **All other files except PDF** \
     The List of urls of files contain only a partial link to the file
     ```python
    >>> Links = Stream.getLinks('mp4')
@@ -111,4 +115,3 @@ For steps to reach to this website, [Click this Link](Link.md)
       nptel.download('https://nptel.ac.in/'+ url , str(count+1)+"."+Links[count].split('=')[3]+'.'+format)
       count = count + 1
     ```
-    
