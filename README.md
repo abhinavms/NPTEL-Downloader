@@ -7,7 +7,8 @@ Python Script to download resources from NPTEL in all formats available
 
 ## Basic Information
 
-Before we get started, ensure that you have installed Python3 on your machine.
+Before we get started, ensure that you have installed Python3 on your machine. \
+(_Sample.py contains a sample code that does all the basic operations_)
 
 ### Modules Required
 1.  Beautiful Soup
