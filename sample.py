@@ -4,7 +4,8 @@ from main import nptel as nptel
 import os
 
 # Creating a directory to save the files
-os.mkdir("Downloads")
+if not os.path.exists('Downloads'):
+      os.mkdir("Downloads")
 os.chdir("./Downloads")
 
 url = input("Enter URL of the download page - ")
